@@ -3,7 +3,7 @@
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 1
+Release:    %mkrel 2
 
 Summary:    Simple flexible means of converting the output of PHP's serialize() into the equivalent Perl memory structure, and vice versa
 License:    GPL+ or Artistic
