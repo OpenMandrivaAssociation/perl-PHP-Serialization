@@ -1,19 +1,18 @@
 %define upstream_name    PHP-Serialization
 %define upstream_version 0.34
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	3
 
-Summary:    Simple flexible means of converting the output of PHP's serialize() into the equivalent Perl memory structure, and vice versa
-License:    GPL+ or Artistic
-Group:      Development/Perl
-Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/PHP/%{upstream_name}-%{upstream_version}.tar.gz
+Summary:	Simple flexible means of converting the output of PHP's serialize()
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/PHP/%{upstream_name}-%{upstream_version}.tar.gz
 
-
-BuildArch: noarch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
+BuildRequires:	perl-devel
+BuildArch:	noarch
 
 %description
 Provides a simple, quick means of serializing perl memory structures
@@ -28,24 +27,33 @@ not.
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-
+perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
 %make test
 
 %install
-rm -rf %buildroot
 %makeinstall_std
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(-,root,root)
 %doc Changes META.yml README
 %{_mandir}/man3/*
-%perl_vendorlib/*
+%{perl_vendorlib}/*
+
+%changelog
+* Mon Apr 18 2011 Funda Wang <fwang@mandriva.org> 0.340.0-2mdv2011.0
++ Revision: 655152
+- rebuild for updated spec-helper
+
+* Mon Mar 22 2010 Jérôme Quelin <jquelin@mandriva.org> 0.340.0-1mdv2011.0
++ Revision: 526452
+- update to 0.34
+
+* Thu Feb 18 2010 Ahmad Samir <ahmadsamir@mandriva.org> 0.330.0-1mdv2010.1
++ Revision: 507356
+- import perl-PHP-Serialization
 
 
+* Thu Feb 18 2010 cpan2dist 0.33-1mdv
+- initial mdv release, generated with cpan2dist
