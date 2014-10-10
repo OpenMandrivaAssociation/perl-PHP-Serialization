@@ -3,7 +3,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Release:	4
 
 Summary:	Simple flexible means of converting the output of PHP's serialize()
 License:	GPL+ or Artistic
