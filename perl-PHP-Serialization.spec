@@ -2,14 +2,14 @@
 %define upstream_version 0.34
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	5
+Version:	%{upstream_version}
+Release:	6
 
 Summary:	Simple flexible means of converting the output of PHP's serialize()
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/PHP/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		https://metacpan.org/dist/PHP-Serialization
+Source0:	https://cpan.metacpan.org/authors/id/B/BO/BOBTFISH/PHP-Serialization-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
