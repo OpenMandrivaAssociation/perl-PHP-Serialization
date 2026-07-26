@@ -1,15 +1,13 @@
 %define upstream_name    PHP-Serialization
-%define upstream_version 0.34
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	6
+Version:	0.34
+Release:	7
 
 Summary:	Simple flexible means of converting the output of PHP's serialize()
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/PHP-Serialization
-Source0:	https://cpan.metacpan.org/authors/id/B/BO/BOBTFISH/PHP-Serialization-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/B/BO/BOBTFISH/PHP-Serialization-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -25,7 +23,7 @@ exclusively numeric indexes, and into Perl Hashes then the PHP array did
 not.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
